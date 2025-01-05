@@ -31,53 +31,89 @@
 			position: relative;
 		}
 
+		/* Sparkle Container */
+		#sparkles {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none; /* Keep sparkles behind text and non-interactive */
+			z-index: 0; /* Ensure sparkles stay in the background */
+		}
+
 		/* Sparkle Animation */
 		@keyframes sparkle {
 			0%, 100% {
-				opacity: 0.4;
+				opacity: 0.2;
 				transform: scale(0.8);
 			}
 			50% {
 				opacity: 1;
-				transform: scale(1.5);
+				transform: scale(1.4);
 			}
 		}
 
 		.sparkle {
 			position: absolute;
-			width: 15px;
-			height: 15px;
-			background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+			width: 8px;
+			height: 8px;
+			background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 40%, transparent 70%);
 			border-radius: 50%;
 			animation: sparkle 2s infinite ease-in-out;
-			opacity: 1;
+			opacity: 0.8;
 		}
 
-		/* Place sparkles randomly */
+		/* Generate More Sparkles with Random Placement */
 		.sparkle:nth-child(1) {
-			top: 10%;
-			left: 20%;
+			top: 5%;
+			left: 15%;
 			animation-delay: 0.2s;
 		}
 		.sparkle:nth-child(2) {
-			top: 25%;
-			left: 70%;
+			top: 20%;
+			left: 50%;
 			animation-delay: 0.5s;
 		}
 		.sparkle:nth-child(3) {
-			top: 50%;
-			left: 40%;
-			animation-delay: 0.8s;
+			top: 40%;
+			left: 70%;
+			animation-delay: 0.7s;
 		}
 		.sparkle:nth-child(4) {
-			top: 75%;
-			left: 60%;
-			animation-delay: 1.2s;
+			top: 60%;
+			left: 30%;
+			animation-delay: 1s;
 		}
 		.sparkle:nth-child(5) {
+			top: 80%;
+			left: 85%;
+			animation-delay: 1.3s;
+		}
+		.sparkle:nth-child(6) {
+			top: 15%;
+			left: 75%;
+			animation-delay: 1.6s;
+		}
+		.sparkle:nth-child(7) {
+			top: 35%;
+			left: 25%;
+			animation-delay: 1.9s;
+		}
+		.sparkle:nth-child(8) {
+			top: 55%;
+			left: 10%;
+			animation-delay: 2.1s;
+		}
+		.sparkle:nth-child(9) {
+			top: 75%;
+			left: 40%;
+			animation-delay: 2.5s;
+		}
+		.sparkle:nth-child(10) {
 			top: 90%;
-			left: 30%;
-			animation-delay: 1.5s;
+			left: 60%;
+			animation-delay: 2.8s;
 		}
 
 		/* Heading */
@@ -87,6 +123,7 @@
 			margin-bottom: 20px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
+			z-index: 1; /* Ensure text stays on top of sparkles */
 		}
 
 		/* Paragraph */
@@ -95,6 +132,7 @@
 			line-height: 1.8;
 			max-width: 600px;
 			margin: 0 auto;
+			z-index: 1; /* Ensure text stays on top of sparkles */
 		}
 
 		/* Responsive Design */
@@ -127,12 +165,19 @@
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
 	</div>
-	<!-- Add sparkles -->
-	<div class="sparkle"></div>
-	<div class="sparkle"></div>
-	<div class="sparkle"></div>
-	<div class="sparkle"></div>
-	<div class="sparkle"></div>
+	<!-- Sparkle Container -->
+	<div id="sparkles">
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+		<div class="sparkle"></div>
+	</div>
 </body>
 
 </html>
