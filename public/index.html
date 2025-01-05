@@ -16,10 +16,67 @@
 			justify-content: center;
 			align-items: center;
 			min-height: 100vh;
-			background: linear-gradient(135deg, #ff9a8b, #fbd786, #c5f0a4, #a18cd1, #fbc2eb); /* Pastel vaporwave gradient */
-			color: #fff;
+			background: linear-gradient(180deg, 
+				#d8aefc,  /* Purple */
+				#ffd1dc,  /* Soft Pink */
+				#fff7bc,  /* Pale Yellow */
+				#bdeffd,  /* Light Blue */
+				#d5aefc   /* Lavender */
+			);
+			color: #000; /* Black font color */
 			text-align: center;
 			padding: 20px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		/* Sparkle Animation */
+		@keyframes sparkle {
+			0%, 100% {
+				opacity: 0.3;
+				transform: scale(0.8);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(1.2);
+			}
+		}
+
+		.sparkle {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+			border-radius: 50%;
+			animation: sparkle 2s infinite ease-in-out;
+			opacity: 0.8;
+		}
+
+		/* Place sparkles randomly */
+		.sparkle:nth-child(1) {
+			top: 10%;
+			left: 20%;
+			animation-delay: 0.2s;
+		}
+		.sparkle:nth-child(2) {
+			top: 25%;
+			left: 70%;
+			animation-delay: 0.5s;
+		}
+		.sparkle:nth-child(3) {
+			top: 50%;
+			left: 40%;
+			animation-delay: 0.8s;
+		}
+		.sparkle:nth-child(4) {
+			top: 75%;
+			left: 60%;
+			animation-delay: 1.2s;
+		}
+		.sparkle:nth-child(5) {
+			top: 90%;
+			left: 30%;
+			animation-delay: 1.5s;
 		}
 
 		/* Heading */
@@ -47,6 +104,12 @@
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
 	</div>
+	<!-- Add sparkles -->
+	<div class="sparkle"></div>
+	<div class="sparkle"></div>
+	<div class="sparkle"></div>
+	<div class="sparkle"></div>
+	<div class="sparkle"></div>
 </body>
 
 </html>
