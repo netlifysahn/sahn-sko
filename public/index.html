@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pastel Vaporwave</title>
-	<!-- Link to Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
+	<title>Dreamy Sparkles</title>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Shrikhand&display=swap" rel="stylesheet">
 	<style>
 		/* General reset */
 		body {
@@ -15,59 +15,72 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			flex-direction: column; /* Align text vertically */
+			flex-direction: column;
 			min-height: 100vh;
 			background: linear-gradient(180deg, 
-				#c3a3ff,  /* Softer Purple */
-				#ffccd5,  /* Soft Pink */
-				#fff8b5,  /* Brighter Yellow */
-				#a4e5ff,  /* Light Blue */
-				#c7b7ff   /* Lavender */
+				rgba(216, 174, 252, 0.8),  /* Soft Purple */
+				rgba(255, 209, 220, 0.8),  /* Soft Pink */
+				rgba(255, 247, 188, 0.8),  /* Pale Yellow */
+				rgba(189, 239, 253, 0.8),  /* Light Blue */
+				rgba(213, 174, 252, 0.8)   /* Lavender */
 			);
-			color: #1a1a1a; /* Near black for better contrast */
+			background-size: 200% 200%;
+			animation: backgroundFlow 10s infinite;
+			color: #000; /* Black font for strong contrast */
 			text-align: center;
 			padding: 20px;
 			overflow: hidden;
 			position: relative;
 		}
 
+		@keyframes backgroundFlow {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
 		/* Sparkle Animation */
 		@keyframes sparkle {
 			0%, 100% {
-				opacity: 0.4;
+				opacity: 0.3;
 				transform: scale(0.8);
 			}
 			50% {
 				opacity: 1;
-				transform: scale(1.5);
+				transform: scale(1.4);
 			}
 		}
 
 		.sparkle {
 			position: absolute;
-			width: 15px; /* Increased size */
-			height: 15px; /* Increased size */
-			background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+			width: 12px;
+			height: 12px;
+			background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 40%, transparent 70%);
 			border-radius: 50%;
-			animation: sparkle 2s infinite ease-in-out;
-			opacity: 1; /* More visible */
+			animation: sparkle 3s infinite ease-in-out;
+			opacity: 0.7;
 		}
 
-		/* Place sparkles randomly */
 		.sparkle:nth-child(1) {
 			top: 10%;
 			left: 20%;
-			animation-delay: 0.2s;
+			animation-delay: 0.3s;
 		}
 		.sparkle:nth-child(2) {
 			top: 25%;
-			left: 70%;
-			animation-delay: 0.5s;
+			left: 80%;
+			animation-delay: 0.6s;
 		}
 		.sparkle:nth-child(3) {
 			top: 50%;
 			left: 40%;
-			animation-delay: 0.8s;
+			animation-delay: 0.9s;
 		}
 		.sparkle:nth-child(4) {
 			top: 75%;
@@ -82,8 +95,8 @@
 
 		/* Heading: Shrikhand Font */
 		h1 {
-			font-family: 'Shrikhand', cursive; /* Shrikhand font */
-			font-size: 4rem; /* Larger font size */
+			font-family: 'Shrikhand', cursive;
+			font-size: 3.5rem;
 			margin-bottom: 20px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
@@ -91,10 +104,10 @@
 
 		/* Subheading: Montserrat Font */
 		h2 {
-			font-family: 'Montserrat', sans-serif; /* Montserrat font */
-			font-size: 2.5rem;
-			margin-bottom: 20px;
-			font-weight: 700;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 2rem;
+			margin-bottom: 15px;
+			font-weight: 600;
 			letter-spacing: 1.2px;
 		}
 
@@ -102,8 +115,8 @@
 		p {
 			font-size: 1.2rem;
 			line-height: 1.8;
-			max-width: 600px;
-			margin: 0 auto;
+			max-width: 700px;
+			margin: 0 auto 20px auto;
 		}
 	</style>
 </head>
@@ -111,7 +124,7 @@
 <body>
 	<div>
 		<h1 id="netlify-title">Hello from Netlify!</h1> <!-- Styled with Shrikhand -->
-		<h2>How's the weather in Kitami?</h2> <!-- Styled with Montserrat -->
+		<h2>Where Creativity Deploys</h2> <!-- Styled with Montserrat -->
 		<p>Code flows into form,<br>
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
