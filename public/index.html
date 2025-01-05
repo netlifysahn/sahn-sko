@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dreamy Sparkles</title>
+	<title>Pastel Vaporwave</title>
 	<!-- Link to Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Shrikhand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
 	<style>
 		/* General reset */
 		body {
@@ -18,13 +18,13 @@
 			flex-direction: column; /* Align text vertically */
 			min-height: 100vh;
 			background: linear-gradient(180deg, 
-				#d8aefc,  /* Purple */
-				#ffd1dc,  /* Soft Pink */
-				#fff7bc,  /* Pale Yellow */
-				#bdeffd,  /* Light Blue */
-				#d5aefc   /* Lavender */
+				#c3a3ff,  /* Softer Purple */
+				#ffccd5,  /* Soft Pink */
+				#fff8b5,  /* Brighter Yellow */
+				#a4e5ff,  /* Light Blue */
+				#c7b7ff   /* Lavender */
 			);
-			color: #000;
+			color: #1a1a1a; /* Near black for better contrast */
 			text-align: center;
 			padding: 20px;
 			overflow: hidden;
@@ -34,8 +34,8 @@
 		/* Sparkle Animation */
 		@keyframes sparkle {
 			0%, 100% {
-				opacity: 0.5;
-				transform: scale(0.9);
+				opacity: 0.4;
+				transform: scale(0.8);
 			}
 			50% {
 				opacity: 1;
@@ -45,72 +45,65 @@
 
 		.sparkle {
 			position: absolute;
-			width: 10px; /* Adjust sparkle size */
-			height: 10px;
-			background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 40%, transparent 70%);
+			width: 15px; /* Increased size */
+			height: 15px; /* Increased size */
+			background: radial-gradient(circle, #ffffff 40%, transparent 70%);
 			border-radius: 50%;
-			animation: sparkle 3s infinite ease-in-out;
-			opacity: 0.7;
+			animation: sparkle 2s infinite ease-in-out;
+			opacity: 1; /* More visible */
 		}
 
 		/* Place sparkles randomly */
 		.sparkle:nth-child(1) {
-			top: 5%;
-			left: 15%;
-			animation-delay: 0.3s;
+			top: 10%;
+			left: 20%;
+			animation-delay: 0.2s;
 		}
 		.sparkle:nth-child(2) {
-			top: 20%;
-			left: 80%;
-			animation-delay: 0.6s;
+			top: 25%;
+			left: 70%;
+			animation-delay: 0.5s;
 		}
 		.sparkle:nth-child(3) {
-			top: 40%;
-			left: 50%;
-			animation-delay: 0.9s;
+			top: 50%;
+			left: 40%;
+			animation-delay: 0.8s;
 		}
 		.sparkle:nth-child(4) {
-			top: 60%;
-			left: 70%;
+			top: 75%;
+			left: 60%;
 			animation-delay: 1.2s;
 		}
 		.sparkle:nth-child(5) {
-			top: 85%;
+			top: 90%;
 			left: 30%;
 			animation-delay: 1.5s;
 		}
 
 		/* Heading: Shrikhand Font */
 		h1 {
-			font-family: 'Shrikhand', cursive;
-			font-size: 3.5rem; /* Slightly smaller for balance */
-			margin-bottom: 15px;
+			font-family: 'Shrikhand', cursive; /* Shrikhand font */
+			font-size: 4rem; /* Larger font size */
+			margin-bottom: 20px;
 			font-weight: 700;
-			letter-spacing: 2px; /* Add ethereal feel */
-			color: #ffd1dc; /* Soft pink to complement theme */
-			text-shadow: 0 0 8px #fff, 0 0 15px #ffd1dc, 0 0 25px #ffb7c5;
+			letter-spacing: 1.5px;
 		}
 
 		/* Subheading: Montserrat Font */
 		h2 {
-			font-family: 'Montserrat', sans-serif;
-			font-size: 2rem;
+			font-family: 'Montserrat', sans-serif; /* Montserrat font */
+			font-size: 2.5rem;
 			margin-bottom: 20px;
-			font-weight: 600; /* Softer emphasis */
+			font-weight: 700;
 			letter-spacing: 1.2px;
-			color: #fff7bc; /* Pale yellow */
-			text-shadow: 0 0 5px #fff, 0 0 10px #fff7bc, 0 0 15px #ffe4a1;
 		}
 
 		/* Paragraph */
 		p {
 			font-size: 1.2rem;
 			line-height: 1.8;
-			max-width: 700px;
+			max-width: 600px;
 			margin: 0 auto;
-			font-weight: 400;
-			color: rgba(255, 255, 255, 0.9); /* Soft white for readability */
-			text-shadow: 0 0 5px #ffffff, 0 0 10px #d8aefc;
 		}
 	</style>
 </head>
@@ -118,7 +111,7 @@
 <body>
 	<div>
 		<h1 id="netlify-title">Hello from Netlify!</h1> <!-- Styled with Shrikhand -->
-		<h2>Dreams Deploy Effortlessly</h2> <!-- Styled with Montserrat -->
+		<h2>How's the weather in Kitami?</h2> <!-- Styled with Montserrat -->
 		<p>Code flows into form,<br>
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
