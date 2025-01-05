@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dreamy Sparkles</title>
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Shrikhand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
 	<style>
 		/* General reset */
 		body {
@@ -18,22 +18,23 @@
 			flex-direction: column;
 			min-height: 100vh;
 			background: linear-gradient(180deg, 
-				rgba(216, 174, 252, 0.8),  /* Soft Purple */
-				rgba(255, 209, 220, 0.8),  /* Soft Pink */
-				rgba(255, 247, 188, 0.8),  /* Pale Yellow */
-				rgba(189, 239, 253, 0.8),  /* Light Blue */
-				rgba(213, 174, 252, 0.8)   /* Lavender */
+				#d8aefc,  /* Purple */
+				#ffd1dc,  /* Soft Pink */
+				#fff7bc,  /* Pale Yellow */
+				#bdeffd,  /* Light Blue */
+				#d5aefc   /* Lavender */
 			);
 			background-size: 200% 200%;
-			animation: backgroundFlow 10s infinite;
-			color: #000; /* Black font for strong contrast */
+			animation: gradientFlow 10s infinite ease-in-out;
+			color: #000;
 			text-align: center;
 			padding: 20px;
 			overflow: hidden;
 			position: relative;
 		}
 
-		@keyframes backgroundFlow {
+		/* Gradient Animation */
+		@keyframes gradientFlow {
 			0% {
 				background-position: 0% 50%;
 			}
@@ -48,52 +49,54 @@
 		/* Sparkle Animation */
 		@keyframes sparkle {
 			0%, 100% {
-				opacity: 0.3;
+				opacity: 0.2;
 				transform: scale(0.8);
 			}
 			50% {
 				opacity: 1;
-				transform: scale(1.4);
+				transform: scale(1.8);
 			}
 		}
 
 		.sparkle {
 			position: absolute;
-			width: 12px;
-			height: 12px;
+			width: 10px;
+			height: 10px;
 			background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 40%, transparent 70%);
 			border-radius: 50%;
 			animation: sparkle 3s infinite ease-in-out;
 			opacity: 0.7;
+			filter: blur(3px); /* Add a dreamy blur effect */
 		}
 
+		/* Place sparkles randomly */
 		.sparkle:nth-child(1) {
-			top: 10%;
-			left: 20%;
-			animation-delay: 0.3s;
+			top: 5%;
+			left: 15%;
+			animation-delay: 0.2s;
 		}
 		.sparkle:nth-child(2) {
-			top: 25%;
-			left: 80%;
-			animation-delay: 0.6s;
+			top: 20%;
+			left: 75%;
+			animation-delay: 0.4s;
 		}
 		.sparkle:nth-child(3) {
-			top: 50%;
-			left: 40%;
-			animation-delay: 0.9s;
+			top: 45%;
+			left: 50%;
+			animation-delay: 0.6s;
 		}
 		.sparkle:nth-child(4) {
-			top: 75%;
-			left: 60%;
-			animation-delay: 1.2s;
+			top: 70%;
+			left: 85%;
+			animation-delay: 0.8s;
 		}
 		.sparkle:nth-child(5) {
-			top: 90%;
-			left: 30%;
-			animation-delay: 1.5s;
+			top: 85%;
+			left: 25%;
+			animation-delay: 1s;
 		}
 
-		/* Heading: Shrikhand Font */
+		/* Heading */
 		h1 {
 			font-family: 'Shrikhand', cursive;
 			font-size: 3.5rem;
@@ -102,29 +105,43 @@
 			letter-spacing: 1.5px;
 		}
 
-		/* Subheading: Montserrat Font */
-		h2 {
-			font-family: 'Montserrat', sans-serif;
-			font-size: 2rem;
-			margin-bottom: 15px;
-			font-weight: 600;
-			letter-spacing: 1.2px;
-		}
-
 		/* Paragraph */
 		p {
-			font-size: 1.2rem;
-			line-height: 1.8;
-			max-width: 700px;
-			margin: 0 auto 20px auto;
+			font-size: 1.1rem;
+			line-height: 1.6;
+			max-width: 90%; /* Adapt for smaller screens */
+			margin: 0 auto;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 2.5rem;
+			}
+			p {
+				font-size: 1rem;
+				line-height: 1.4;
+			}
+			.sparkle {
+				width: 8px;
+				height: 8px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			h1 {
+				font-size: 2rem;
+			}
+			p {
+				font-size: 0.9rem;
+			}
 		}
 	</style>
 </head>
 
 <body>
 	<div>
-		<h1 id="netlify-title">Hello from Netlify!</h1> <!-- Styled with Shrikhand -->
-		<h2>Where Creativity Deploys</h2> <!-- Styled with Montserrat -->
+		<h1 id="netlify-title">Hello Netlify</h1>
 		<p>Code flows into form,<br>
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
