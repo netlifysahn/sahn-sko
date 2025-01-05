@@ -17,32 +17,39 @@
 			align-items: center;
 			flex-direction: column;
 			min-height: 100vh;
-			background: linear-gradient(180deg, 
-				#d8aefc, #ffd1dc, #fff7bc, #bdeffd, #d5aefc
-			);
-			background-size: 200% 200%;
-			animation: hueShift 10s infinite;
-			color: #000;
-			text-align: center;
-			padding: 20px;
 			overflow: hidden;
 			position: relative;
 		}
 
-		/* Background Hue Shift Animation */
-		@keyframes hueShift {
-			0% {
-				background-position: 0% 50%;
-				filter: hue-rotate(0deg);
-			}
-			50% {
-				background-position: 100% 50%;
-				filter: hue-rotate(180deg);
-			}
-			100% {
-				background-position: 0% 50%;
-				filter: hue-rotate(360deg);
-			}
+		/* Gradient Layers */
+		#gradient1, #gradient2 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			animation: fadeInOut 6s infinite alternate;
+			mix-blend-mode: screen;
+			z-index: 0;
+		}
+
+		#gradient1 {
+			background: linear-gradient(180deg, 
+				#d8aefc, #ffd1dc, #fff7bc, #bdeffd, #d5aefc);
+			animation-delay: 0s;
+		}
+
+		#gradient2 {
+			background: linear-gradient(180deg, 
+				#ffd1dc, #fff7bc, #bdeffd, #d8aefc, #ffd1dc);
+			animation-delay: 3s;
+		}
+
+		/* Gradient Animation */
+		@keyframes fadeInOut {
+			0% { opacity: 0.8; }
+			50% { opacity: 0.4; }
+			100% { opacity: 0.8; }
 		}
 
 		/* Sparkle Container */
@@ -53,7 +60,7 @@
 			width: 100%;
 			height: 100%;
 			pointer-events: none; /* Non-interactive sparkles */
-			z-index: 0; /* Keep sparkles in the background */
+			z-index: 1;
 		}
 
 		/* Sparkle Animation */
@@ -165,7 +172,7 @@
 			margin-bottom: 20px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
-			z-index: 1;
+			z-index: 2; /* Text on top of sparkles */
 		}
 
 		/* Paragraph */
@@ -174,7 +181,7 @@
 			line-height: 1.8;
 			max-width: 600px;
 			margin: 0 auto;
-			z-index: 1;
+			z-index: 2; /* Text on top of sparkles */
 		}
 
 		/* Responsive Design */
@@ -201,6 +208,8 @@
 </head>
 
 <body>
+	<div id="gradient1"></div>
+	<div id="gradient2"></div>
 	<div>
 		<h1 id="netlify-title">Hello Netlify</h1>
 		<p>Code flows into form,<br>
