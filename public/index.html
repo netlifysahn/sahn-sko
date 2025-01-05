@@ -15,6 +15,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			flex-direction: column; /* Align text vertically */
 			min-height: 100vh;
 			background: linear-gradient(180deg, 
 				#d8aefc,  /* Purple */
@@ -79,13 +80,22 @@
 			animation-delay: 1.5s;
 		}
 
-		/* Heading */
+		/* Heading: Shrikhand Font */
 		h1 {
-			font-family: 'Montserrat', sans-serif; /* Montserrat font */
-			font-size: 3rem; /* Adjusted font size */
+			font-family: 'Shrikhand', cursive; /* Shrikhand font */
+			font-size: 4rem; /* Larger font size */
 			margin-bottom: 20px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
+		}
+
+		/* Subheading: Montserrat Font */
+		h2 {
+			font-family: 'Montserrat', sans-serif; /* Montserrat font */
+			font-size: 2.5rem;
+			margin-bottom: 20px;
+			font-weight: 700;
+			letter-spacing: 1.2px;
 		}
 
 		/* Paragraph */
@@ -100,7 +110,8 @@
 
 <body>
 	<div>
-		<h1 id="netlify-title">How's the weather in Kitami?</h1> <!-- Updated text -->
+		<h1 id="netlify-title">Hello from Netlify!</h1> <!-- Styled with Shrikhand -->
+		<h2>How's the weather in Kitami?</h2> <!-- Styled with Montserrat -->
 		<p>Code flows into form,<br>
 Deployments fast, dreams take shape—<br>
 Builds light up the web.</p>
