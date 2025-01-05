@@ -18,17 +18,31 @@
 			flex-direction: column;
 			min-height: 100vh;
 			background: linear-gradient(180deg, 
-				#d8aefc,  /* Purple */
-				#ffd1dc,  /* Soft Pink */
-				#fff7bc,  /* Pale Yellow */
-				#bdeffd,  /* Light Blue */
-				#d5aefc   /* Lavender */
+				#d8aefc, #ffd1dc, #fff7bc, #bdeffd, #d5aefc
 			);
+			background-size: 200% 200%;
+			animation: hueShift 10s infinite;
 			color: #000;
 			text-align: center;
 			padding: 20px;
 			overflow: hidden;
 			position: relative;
+		}
+
+		/* Background Hue Shift Animation */
+		@keyframes hueShift {
+			0% {
+				background-position: 0% 50%;
+				filter: hue-rotate(0deg);
+			}
+			50% {
+				background-position: 100% 50%;
+				filter: hue-rotate(180deg);
+			}
+			100% {
+				background-position: 0% 50%;
+				filter: hue-rotate(360deg);
+			}
 		}
 
 		/* Sparkle Container */
@@ -38,8 +52,8 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			pointer-events: none; /* Keep sparkles behind text and non-interactive */
-			z-index: 0; /* Ensure sparkles stay in the background */
+			pointer-events: none; /* Non-interactive sparkles */
+			z-index: 0; /* Keep sparkles in the background */
 		}
 
 		/* Sparkle Animation */
@@ -50,7 +64,7 @@
 			}
 			50% {
 				opacity: 1;
-				transform: scale(1.4);
+				transform: scale(1.5);
 			}
 		}
 
@@ -151,7 +165,7 @@
 			margin-bottom: 20px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
-			z-index: 1; /* Ensure text stays on top of sparkles */
+			z-index: 1;
 		}
 
 		/* Paragraph */
@@ -160,7 +174,7 @@
 			line-height: 1.8;
 			max-width: 600px;
 			margin: 0 auto;
-			z-index: 1; /* Ensure text stays on top of sparkles */
+			z-index: 1;
 		}
 
 		/* Responsive Design */
